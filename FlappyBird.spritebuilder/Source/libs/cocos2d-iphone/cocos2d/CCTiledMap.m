@@ -95,7 +95,7 @@
 	}
 }
 
--(id) initWithXML:(NSString*)tmxString resourcePath:(NSString*)resourcePath
+-(instancetype) initWithXML:(NSString*)tmxString resourcePath:(NSString*)resourcePath
 {
 	if ((self=[super init])) {
 
@@ -110,7 +110,7 @@
 	return self;
 }
 
--(id) initWithFile:(NSString*)tmxFile
+-(instancetype) initWithFile:(NSString*)tmxFile
 {
 	NSAssert(tmxFile != nil, @"TMXTiledMap: tmx file should not be nil");
 
@@ -206,7 +206,7 @@
 	return [_properties valueForKey:propertyName];
 }
 -(NSDictionary*)propertiesForGID:(unsigned int)GID{
-	return [_tileProperties objectForKey:[NSNumber numberWithInt:GID]];
+	return _tileProperties[[NSNumber numberWithInt:GID]];
 }
 @end
 

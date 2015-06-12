@@ -142,7 +142,7 @@ static NSUInteger globalOrderOfArrival = 1;
 	return [[self alloc] init];
 }
 
--(id) init
+-(instancetype) init
 {
 	if ((self=[super init]) ) {
 		_isInActiveScene = NO;

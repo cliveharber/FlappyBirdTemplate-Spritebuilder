@@ -87,7 +87,7 @@
  *  @return An initialized CCRenderTarget object.
  *  @see CCTexturePixelFormat
  */
--(id)initWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format;
+-(instancetype)initWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format;
 
 /**
  *  Initializes a CCEffectNode object with width and height in Points and a pixel format( only RGB and RGBA formats are valid ) and depthStencil format
@@ -100,7 +100,7 @@
  *  @return An initialized CCRenderTarget object.
  *  @see CCTexturePixelFormat
  */
--(id)initWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format depthStencilFormat:(GLuint)depthStencilFormat;
+-(instancetype)initWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format depthStencilFormat:(GLuint)depthStencilFormat NS_DESIGNATED_INITIALIZER;
 
 /** @name Assigning an Effect */
 

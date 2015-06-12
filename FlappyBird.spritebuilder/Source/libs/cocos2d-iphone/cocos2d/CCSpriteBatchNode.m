@@ -55,19 +55,19 @@
 	return [[self alloc] initWithFile:imageFile capacity:0];
 }
 
--(id)init
+-(instancetype)init
 {
     return [self initWithTexture:[[CCTexture alloc] init] capacity:0];
 }
 
--(id)initWithFile:(NSString *)fileImage capacity:(NSUInteger)capacity
+-(instancetype)initWithFile:(NSString *)fileImage capacity:(NSUInteger)capacity
 {
 	CCTexture *tex = [[CCTextureCache sharedTextureCache] addImage:fileImage];
 	return [self initWithTexture:tex capacity:capacity];
 }
 
 // Designated initializer
--(id)initWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
+-(instancetype)initWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
 {
 	if( (self=[super init])) {
 		self.texture = tex;

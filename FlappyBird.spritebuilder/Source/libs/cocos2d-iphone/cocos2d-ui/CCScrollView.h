@@ -141,7 +141,7 @@
  self.contentSizeType = CCSizeTypeNormalized;
  
  @param contentNode The node the scroll view will display. Must not be nil. */
-+ (id) scrollViewWithContentNode:(CCNode*)contentNode;
++ (instancetype) scrollViewWithContentNode:(CCNode*)contentNode;
 
 /** Initializes a new scroll view with a content node.
  
@@ -151,7 +151,7 @@
     self.contentSizeType = CCSizeTypeNormalized;
  
  @param contentNode The node the scroll view will display. Must not be nil. */
-- (id) initWithContentNode:(CCNode*)contentNode;
+- (instancetype) initWithContentNode:(CCNode*)contentNode NS_DESIGNATED_INITIALIZER;
 
 /** @name Assigning Content Node and Delegate */
 

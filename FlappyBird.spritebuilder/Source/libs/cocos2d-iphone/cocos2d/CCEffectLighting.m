@@ -57,7 +57,7 @@ static float conditionShininess(float shininess);
 
 @implementation CCEffectLightingImpl
 
--(id)initWithInterface:(CCEffectLighting *)interface
+-(instancetype)initWithInterface:(CCEffectLighting *)interface
 {
     NSMutableArray *fragUniforms = [[NSMutableArray alloc] initWithArray:@[
                                                                            [CCEffectUniform uniform:@"vec4" name:@"u_globalAmbientColor" value:[NSValue valueWithGLKVector4:GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f)]],
@@ -90,7 +90,7 @@ static float conditionShininess(float shininess);
     
     if (interface.needsSpecular)
     {
-        [fragUniforms addObject:[CCEffectUniform uniform:@"float" name:@"u_specularExponent" value:[NSNumber numberWithFloat:5.0f]]];
+        [fragUniforms addObject:[CCEffectUniform uniform:@"float" name:@"u_specularExponent" value:@5.0f]];
         [fragUniforms addObject:[CCEffectUniform uniform:@"vec4" name:@"u_specularColor" value:[NSValue valueWithGLKVector4:GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f)]]];
     }
     
@@ -348,12 +348,12 @@ static float conditionShininess(float shininess);
 
 @implementation CCEffectLighting
 
--(id)init
+-(instancetype)init
 {
     return [self initWithGroups:@[] specularColor:[CCColor whiteColor] shininess:0.5f];
 }
 
--(id)initWithGroups:(NSArray *)groups specularColor:(CCColor *)specularColor shininess:(float)shininess
+-(instancetype)initWithGroups:(NSArray *)groups specularColor:(CCColor *)specularColor shininess:(float)shininess
 {
     if((self = [super init]))
     {
@@ -364,7 +364,7 @@ static float conditionShininess(float shininess);
         _groupMaskDirty = YES;
         _specularColor = specularColor;
         _shininess = shininess;
-        _conditionedShininess = [NSNumber numberWithFloat:conditionShininess(shininess)];
+        _conditionedShininess = @(conditionShininess(shininess));
     }
     return self;
 }
@@ -424,7 +424,7 @@ static float conditionShininess(float shininess);
 -(void)setShininess:(float)shininess
 {
     _shininess = shininess;
-    _conditionedShininess = [NSNumber numberWithFloat:conditionShininess(shininess)];
+    _conditionedShininess = @(conditionShininess(shininess));
 }
 
 @end

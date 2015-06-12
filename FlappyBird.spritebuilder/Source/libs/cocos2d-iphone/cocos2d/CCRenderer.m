@@ -39,7 +39,7 @@
 @interface NSValue()
 
 // Defined in NSValue+CCRenderer.m.
--(size_t)CCRendererSizeOf;
+@property (NS_NONATOMIC_IOSONLY, readonly) size_t CCRendererSizeOf;
 
 @end
 

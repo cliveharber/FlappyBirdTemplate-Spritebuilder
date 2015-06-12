@@ -73,7 +73,7 @@
 +(instancetype) clippingNodeWithStencil:(CCNode *)stencil;
 
 // purposefully undocumented: init is inherited from NSObject
--(id) init;
+-(instancetype) init;
 
 /**
  *  Initializes and returns a clipping node object with the specified stencil node.
@@ -83,7 +83,7 @@
  *  @return The new CCClippingNode instance.
  *  @see clippingNodeWithStencil:
  */
--(id) initWithStencil:(CCNode *)stencil;
+-(instancetype) initWithStencil:(CCNode *)stencil NS_DESIGNATED_INITIALIZER;
 
 /// -----------------------------------------------------------------------
 /// @name Accessing the Stencil (Mask) Node

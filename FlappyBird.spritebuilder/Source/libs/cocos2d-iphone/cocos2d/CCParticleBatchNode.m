@@ -89,7 +89,7 @@
 /*
  * init with CCTexture2D
  */
--(id)initWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
+-(instancetype)initWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
 {
 	if (self = [super init])
 	{
@@ -105,7 +105,7 @@
 /*
  * init with FileImage
  */
--(id)initWithFile:(NSString *)fileImage capacity:(NSUInteger)capacity
+-(instancetype)initWithFile:(NSString *)fileImage capacity:(NSUInteger)capacity
 {
 	CCTexture *tex = [[CCTextureCache sharedTextureCache] addImage:fileImage];
 	return [self initWithTexture:tex capacity:capacity];

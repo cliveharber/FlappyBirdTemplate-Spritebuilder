@@ -40,22 +40,22 @@
 @implementation CCEffectNode
 
 
--(id)init
+-(instancetype)init
 {
     return [self initWithWidth:1 height:1];
 }
 
--(id)initWithWidth:(int)width height:(int)height
+-(instancetype)initWithWidth:(int)width height:(int)height
 {
     return [self initWithWidth:width height:height pixelFormat:CCTexturePixelFormat_Default];
 }
 
--(id)initWithWidth:(int)width height:(int)height pixelFormat:(CCTexturePixelFormat)format
+-(instancetype)initWithWidth:(int)width height:(int)height pixelFormat:(CCTexturePixelFormat)format
 {
     return [self initWithWidth:width height:height pixelFormat:format depthStencilFormat:0];
 }
 
--(id)initWithWidth:(int)width height:(int)height pixelFormat:(CCTexturePixelFormat) format depthStencilFormat:(GLuint)depthStencilFormat
+-(instancetype)initWithWidth:(int)width height:(int)height pixelFormat:(CCTexturePixelFormat) format depthStencilFormat:(GLuint)depthStencilFormat
 {
     if((self = [super initWithWidth:width height:height pixelFormat:CCTexturePixelFormat_Default depthStencilFormat:depthStencilFormat]))
     {

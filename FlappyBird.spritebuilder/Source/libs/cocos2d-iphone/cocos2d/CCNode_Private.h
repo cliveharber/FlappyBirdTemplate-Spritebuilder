@@ -44,7 +44,7 @@ CGAffineTransform CGAffineTransformMakeRigid(CGPoint translate, CGFloat radians)
 }
 
 /// Returns true if the node is not using custom uniforms.
--(BOOL)hasDefaultShaderUniforms;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL hasDefaultShaderUniforms;
 
 /// Cache and return the current render state.
 /// Should be set to nil whenever changing a property that affects the renderstate.

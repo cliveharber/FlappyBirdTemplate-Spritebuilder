@@ -73,7 +73,7 @@
  *  @see CCTiledMapLayerInfo
  *  @see CCTiledMapInfo
  */
--(id) initWithTilesetInfo:(CCTiledMapTilesetInfo*)tilesetInfo layerInfo:(CCTiledMapLayerInfo*)layerInfo mapInfo:(CCTiledMapInfo*)mapInfo;
+-(instancetype) initWithTilesetInfo:(CCTiledMapTilesetInfo*)tilesetInfo layerInfo:(CCTiledMapLayerInfo*)layerInfo mapInfo:(CCTiledMapInfo*)mapInfo NS_DESIGNATED_INITIALIZER;
 
 /// -----------------------------------------------------------------------
 /// @name Tiled Map Layer Attributes

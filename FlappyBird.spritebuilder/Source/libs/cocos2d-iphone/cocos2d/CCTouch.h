@@ -69,7 +69,7 @@ typedef NS_ENUM (NSInteger, CCTouchPhase) {
 */
 @property (nonatomic, strong) PlatformTouch* uiTouch;
 
-- (instancetype)initWithPlatformTouch:(PlatformTouch*)touch;
+- (instancetype)initWithPlatformTouch:(PlatformTouch*)touch NS_DESIGNATED_INITIALIZER;
 + (instancetype)touchWithPlatformTouch:(PlatformTouch*)touch;
 
 /** @name Convert Touch Location to Node Coordinate System */
@@ -84,7 +84,7 @@ typedef NS_ENUM (NSInteger, CCTouchPhase) {
  @returns The touch location relative to the scene (aka "world"). 
  @since v3.2 and later
 */
-- (CGPoint)locationInWorld;
+@property (NS_NONATOMIC_IOSONLY, readonly) CGPoint locationInWorld;
 
 /** @name Convert Touch Location to View Coordinate System */
 
