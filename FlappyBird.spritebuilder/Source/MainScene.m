@@ -211,7 +211,7 @@
         CGPoint cloudScreenPosition = [self convertToNodeSpace:cloudWorldPosition];
         
         
-        if (cloud.position.x <= (-1 * cloud.contentSize.width)) {
+        if (cloudScreenPosition.x <= (-1 * cloud.contentSize.width)) {
             for (CGPointObject *child in _parallaxBackground.parallaxArray) {
                 if (child.child == cloud) {
                     child.offset = ccp(child.offset.x + 2 * cloud.contentSize.width, child.offset.y);
