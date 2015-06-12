@@ -54,7 +54,7 @@
  *
  *  @return The CCSpriteFrame Object.
  */
-+(instancetype) frameWithImageNamed:(NSString*)imageName;
++(id) frameWithImageNamed:(NSString*)imageName;
 
 /**
  *  Create and return a sprite frame object from the specified texture, texture rectangle, rotation status, offset and originalSize values.
@@ -68,7 +68,7 @@
  *  @return The CCSpriteFrame Object.
  *  @see CCTexture
  */
-+(instancetype) frameWithTexture:(CCTexture*)texture rectInPixels:(CGRect)rect rotated:(BOOL)rotated offset:(CGPoint)offset originalSize:(CGSize)originalSize;
++(id) frameWithTexture:(CCTexture*)texture rectInPixels:(CGRect)rect rotated:(BOOL)rotated offset:(CGPoint)offset originalSize:(CGSize)originalSize;
 
 /**
  *  Create and return a sprite frame object from the specified texture file name, texture rectangle, rotation status, offset and originalSize values.
@@ -81,7 +81,7 @@
  *
  *  @return The CCSpriteFrame Object.
  */
-+(instancetype) frameWithTextureFilename:(NSString*)filename rectInPixels:(CGRect)rect rotated:(BOOL)rotated offset:(CGPoint)offset originalSize:(CGSize)originalSize;
++(id) frameWithTextureFilename:(NSString*)filename rectInPixels:(CGRect)rect rotated:(BOOL)rotated offset:(CGPoint)offset originalSize:(CGSize)originalSize;
 
 /**
  *  Initializes and returns a sprite frame object from the specified texture, texture rectangle, rotation status, offset and originalSize values.

@@ -33,5 +33,6 @@
 @property (nonatomic,assign) float time;
 @property (nonatomic,assign) int easingType;
 @property (nonatomic,assign) float easingOpt;
+@property (nonatomic,strong) CCActionSequence* frameActions;
 
 @end

@@ -114,7 +114,7 @@ typedef NS_ENUM(NSUInteger, CCTiledMapOrientation)
  *
  *  @return The CCTiledMap Object.
  */
-+(instancetype) tiledMapWithFile:(NSString*)tmxFile;
++(id) tiledMapWithFile:(NSString*)tmxFile;
 
 /**
  *  Creates a returns a Tile Map object using the specified TMX XML and path to TMX resources.
@@ -124,7 +124,7 @@ typedef NS_ENUM(NSUInteger, CCTiledMapOrientation)
  *
  *  @return The CCTiledMap Object.
  */
-+(instancetype) tiledMapWithXML:(NSString*)tmxString resourcePath:(NSString*)resourcePath;
++(id) tiledMapWithXML:(NSString*)tmxString resourcePath:(NSString*)resourcePath;
 
 /**
  *  Initializes and returns a Tile Map object using the specified TMX file.

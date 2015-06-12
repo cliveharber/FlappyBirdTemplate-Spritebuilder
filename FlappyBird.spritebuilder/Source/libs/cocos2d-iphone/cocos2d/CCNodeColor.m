@@ -259,12 +259,12 @@
 #pragma mark MultiplexLayer
 
 @implementation CCNodeMultiplexer
-+(instancetype) nodeWithArray:(NSArray *)arrayOfNodes
++(id) nodeWithArray:(NSArray *)arrayOfNodes
 {
 	return [[self alloc] initWithArray:arrayOfNodes];
 }
 
-+(instancetype) nodeWithNodes: (CCNode*) layer, ...
++(id) nodeWithNodes: (CCNode*) layer, ...
 {
 	va_list args;
 	va_start(args,layer);

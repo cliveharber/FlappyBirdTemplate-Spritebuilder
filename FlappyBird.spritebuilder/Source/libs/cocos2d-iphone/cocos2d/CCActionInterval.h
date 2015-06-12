@@ -1032,7 +1032,7 @@ typedef struct _ccBezierConfig {
   @return New animation action
   @see CCAnimation
 */
-+(instancetype) actionWithAnimation:(CCAnimation*)animation;
++(id) actionWithAnimation:(CCAnimation*)animation;
 
 /**
   Initializes the action with an Animation.

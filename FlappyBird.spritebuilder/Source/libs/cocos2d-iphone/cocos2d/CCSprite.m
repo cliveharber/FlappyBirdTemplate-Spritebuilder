@@ -59,37 +59,37 @@
 	BOOL _flipX, _flipY;
 }
 
-+(instancetype)spriteWithImageNamed:(NSString*)imageName
++(id)spriteWithImageNamed:(NSString*)imageName
 {
     return [[self alloc] initWithImageNamed:imageName];
 }
 
-+(instancetype)spriteWithTexture:(CCTexture*)texture
++(id)spriteWithTexture:(CCTexture*)texture
 {
 	return [[self alloc] initWithTexture:texture];
 }
 
-+(instancetype)spriteWithTexture:(CCTexture*)texture rect:(CGRect)rect
++(id)spriteWithTexture:(CCTexture*)texture rect:(CGRect)rect
 {
 	return [[self alloc] initWithTexture:texture rect:rect];
 }
 
-+(instancetype)spriteWithFile:(NSString*)filename
++(id)spriteWithFile:(NSString*)filename
 {
 	return [[self alloc] initWithFile:filename];
 }
 
-+(instancetype)spriteWithFile:(NSString*)filename rect:(CGRect)rect
++(id)spriteWithFile:(NSString*)filename rect:(CGRect)rect
 {
 	return [[self alloc] initWithFile:filename rect:rect];
 }
 
-+(instancetype)spriteWithSpriteFrame:(CCSpriteFrame*)spriteFrame
++(id)spriteWithSpriteFrame:(CCSpriteFrame*)spriteFrame
 {
 	return [[self alloc] initWithSpriteFrame:spriteFrame];
 }
 
-+(instancetype)spriteWithSpriteFrameName:(NSString*)spriteFrameName
++(id)spriteWithSpriteFrameName:(NSString*)spriteFrameName
 {
 	CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:spriteFrameName];
 
@@ -97,12 +97,12 @@
 	return [self spriteWithSpriteFrame:frame];
 }
 
-+(instancetype)spriteWithCGImage:(CGImageRef)image key:(NSString*)key
++(id)spriteWithCGImage:(CGImageRef)image key:(NSString*)key
 {
 	return [[self alloc] initWithCGImage:image key:key];
 }
 
-+(instancetype) emptySprite
++(id) emptySprite
 {
     return [[self alloc] init];
 }
@@ -131,6 +131,8 @@
 		
 		[self setTexture:texture];
 		[self setTextureRect:rect rotated:rotated untrimmedSize:rect.size];
+        
+        _effectRenderer = [[CCEffectRenderer alloc] init];
 	}
 	
 	return self;
@@ -434,18 +436,14 @@
 
 -(void)setEffect:(CCEffect *)effect
 {
-    if(effect != _effect){
-        _effect = effect;
-        
-        if(effect){
-            if(_effectRenderer == nil){
-                _effectRenderer = [[CCEffectRenderer alloc] init];
-            }
-            
-            [self updateShaderUniformsFromEffect];
-        } else {
-            _shaderUniforms = nil;
-        }
+    _effect = effect;
+    if (effect)
+    {
+        [self updateShaderUniformsFromEffect];
+    }
+    else
+    {
+        _shaderUniforms = nil;
     }
 }
 

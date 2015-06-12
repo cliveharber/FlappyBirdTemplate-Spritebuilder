@@ -244,11 +244,12 @@ static GLKVector2 selectTexCoordPadding(CCEffectTexCoordSource tcSource, GLKVect
             renderPass = [[CCEffectRenderPass alloc] init];
             renderPass.debugLabel = @"CCEffectRenderer composite pass";
             renderPass.shader = [CCEffectRenderer sharedCopyShader];
-            renderPass.beginBlocks = @[[[CCEffectRenderPassBeginBlockContext alloc] initWithBlock:^(CCEffectRenderPass *pass, CCEffectRenderPassInputs *passInputs){
+            renderPass.beginBlocks = @[[^(CCEffectRenderPass *pass, CCEffectRenderPassInputs *passInputs){
                 
                 passInputs.shaderUniforms[CCShaderUniformMainTexture] = passInputs.previousPassTexture;
                 passInputs.shaderUniforms[CCShaderUniformPreviousPassTexture] = passInputs.previousPassTexture;
-            }]];
+            } copy]];
+
         }
         
         if (fromIntermediate && (renderPass.indexInEffect == 0))
@@ -292,6 +293,7 @@ static GLKVector2 selectTexCoordPadding(CCEffectTexCoordSource tcSource, GLKVect
             
             [renderPass begin:renderPassInputs];
             [renderPass update:renderPassInputs];
+            [renderPass end:renderPassInputs];
         }
         else
         {
@@ -314,6 +316,7 @@ static GLKVector2 selectTexCoordPadding(CCEffectTexCoordSource tcSource, GLKVect
             [self bindRenderTarget:rt withRenderer:renderer];
             [renderPass update:renderPassInputs];
             [self restoreRenderTargetWithRenderer:renderer];
+            [renderPass end:renderPassInputs];
         }
         [renderer popGroupWithDebugLabel:renderPass.debugLabel globalSortOrder:0];
         

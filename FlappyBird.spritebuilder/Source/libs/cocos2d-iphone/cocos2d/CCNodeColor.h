@@ -55,7 +55,7 @@
  *  @return The CCNodeColor Object.
  *  @see CCColor
  */
-+(instancetype) nodeWithColor: (CCColor*)color width:(GLfloat)w height:(GLfloat)h;
++(id) nodeWithColor: (CCColor*)color width:(GLfloat)w height:(GLfloat)h;
 
 /**
  *  Creates a node with color. Width and height are the window size.
@@ -65,7 +65,7 @@
  *  @return The CCNodeColor Object.
  *  @see CCColor
  */
-+(instancetype) nodeWithColor: (CCColor*)color;
++(id) nodeWithColor: (CCColor*)color;
 
 /**
  *  Creates a node with color, width and height in Points.
@@ -123,7 +123,7 @@
  *  @return The CCNodeGradient Object.
  *  @see CCColor
  */
-+(instancetype)nodeWithColor:(CCColor*)start fadingTo:(CCColor*)end;
++(id)nodeWithColor:(CCColor*)start fadingTo:(CCColor*)end;
 
 /**
  *  Creates a full-screen CCNode with a gradient between start and end color values with gradient direction vector.
@@ -135,7 +135,7 @@
  *  @return The CCNodeGradient Object.
  *  @see CCColor
  */
-+(instancetype)nodeWithColor:(CCColor*)start fadingTo:(CCColor*)end alongVector:(CGPoint)v;
++(id)nodeWithColor:(CCColor*)start fadingTo:(CCColor*)end alongVector:(CGPoint)v;
 
 /**
  *  Creates a full-screen CCNode with a gradient between start and end color values.
@@ -229,7 +229,7 @@
  *
  *  @return The CCNodeMultiplexer object.
  */
-+(instancetype)nodeWithArray:(NSArray*)arrayOfNodes;
++(id)nodeWithArray:(NSArray*)arrayOfNodes;
 
 /* Creates a CCMultiplexLayer with one or more nodes using a variable argument list.
  *  Example: 
@@ -239,7 +239,7 @@
  *  @param ... Nil terminator.
  *  @return The CCNodeMultiplexer object.
  */
-+(instancetype)nodeWithNodes:(CCNode*)node, ... NS_REQUIRES_NIL_TERMINATION;
++(id)nodeWithNodes:(CCNode*)node, ... NS_REQUIRES_NIL_TERMINATION;
 
 
 /// -----------------------------------------------------------------------

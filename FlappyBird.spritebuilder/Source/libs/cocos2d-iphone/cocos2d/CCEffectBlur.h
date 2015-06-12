@@ -39,7 +39,7 @@
  *  @return The CCEffectBlur object.
  *  @since v3.2 and later
  */
-+(instancetype)effectWithBlurRadius:(NSUInteger)blurRadius;
++(id)effectWithBlurRadius:(NSUInteger)blurRadius;
 
 /**
  *  Initializes a CCEffectBlur object with the following default parameters:

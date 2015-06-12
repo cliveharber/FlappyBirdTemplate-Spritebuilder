@@ -139,7 +139,7 @@
 #pragma mark CCFlipX
 
 @implementation CCActionFlipX
-+(instancetype) actionWithFlipX:(BOOL)x
++(id) actionWithFlipX:(BOOL)x
 {
 	return [[self alloc] initWithFlipX:x];
 }
@@ -175,7 +175,7 @@
 #pragma mark CCFlipY
 
 @implementation CCActionFlipY
-+(instancetype) actionWithFlipY:(BOOL)y
++(id) actionWithFlipY:(BOOL)y
 {
 	return [[self alloc] initWithFlipY:y];
 }
@@ -212,7 +212,7 @@
 #pragma mark CCPlace
 
 @implementation CCActionPlace
-+(instancetype) actionWithPosition: (CGPoint) pos
++(id) actionWithPosition: (CGPoint) pos
 {
 	return [[self alloc]initWithPosition:pos];
 }
@@ -247,7 +247,7 @@
 
 @synthesize targetCallback = _targetCallback;
 
-+(instancetype) actionWithTarget: (id) t selector:(SEL) s
++(id) actionWithTarget: (id) t selector:(SEL) s
 {
 	return [[self alloc] initWithTarget: t selector: s];
 }
@@ -301,7 +301,7 @@
 
 @implementation CCActionCallBlock
 
-+(instancetype) actionWithBlock:(void(^)())block
++(id) actionWithBlock:(void(^)())block
 {
 	return [[self alloc] initWithBlock:block];
 }
@@ -386,7 +386,9 @@
 
 - (void)update:(CCTime)time
 {
+#if __CC_PLATFORM_IOS || __CC_PLATFORM_MAC
     [[OALSimpleAudio sharedInstance] playEffect:_soundFile volume:_gain pitch:_pitch pan:_pan loop:NO];
+#endif
 }
 
 - (id)copyWithZone:(NSZone*)zone

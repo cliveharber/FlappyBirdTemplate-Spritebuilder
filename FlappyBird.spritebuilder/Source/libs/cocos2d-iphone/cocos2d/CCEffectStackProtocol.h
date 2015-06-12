@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
-// not documented, considered a private protocol
 @protocol CCEffectStackProtocol <NSObject>
 
 - (void)passesDidChange:(id)sender;

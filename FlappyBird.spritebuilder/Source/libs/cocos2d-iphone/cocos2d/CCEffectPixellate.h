@@ -26,7 +26,7 @@
  *  @return The CCEffectPixellate object.
  *  @since v3.2 and later
  */
-+(instancetype)effectWithBlockSize:(float)blockSize;
++(id)effectWithBlockSize:(float)blockSize;
 
 /**
  *  Initializes a CCEffectPixellate object with a block size of 1.

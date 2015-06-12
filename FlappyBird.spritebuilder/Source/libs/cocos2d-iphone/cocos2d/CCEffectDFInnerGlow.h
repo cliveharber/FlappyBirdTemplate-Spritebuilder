@@ -11,8 +11,8 @@
 #if CC_EFFECTS_EXPERIMENTAL
 
 /**
- CCEffectDFInnerGlow create an inner glow on any sprite (combined with a distance field).
- @note This class is currently considered experimental. Set the `CC_EFFECTS_EXPERIMENTAL` macro to 1 in ccConfig.h if you want to use this class.
+ * CCEffectDFInnerGlow create an inner glow on any sprite (combined with a distance field).
+ *
  */
 @interface CCEffectDFInnerGlow : CCEffect
 
@@ -37,7 +37,7 @@
 *  @see CCColor
 *  @see CCTexture
 */
-+(instancetype)effectWithGlowColor:(CCColor*)glowColor fillColor:(CCColor*)fillColor glowWidth:(int)glowWidth fieldScale:(float)fieldScale distanceField:(CCTexture*)distanceField;
++(id)effectWithGlowColor:(CCColor*)glowColor fillColor:(CCColor*)fillColor glowWidth:(int)glowWidth fieldScale:(float)fieldScale distanceField:(CCTexture*)distanceField;
 
 /**
  *  Initializes a CCEffectDFInnerGlow.

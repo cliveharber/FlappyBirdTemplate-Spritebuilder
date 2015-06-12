@@ -43,7 +43,7 @@
 
 @synthesize controlPoints = _controlPoints;
 
-+(instancetype) arrayWithCapacity:(NSUInteger)capacity
++(id) arrayWithCapacity:(NSUInteger)capacity
 {
 	return [[self alloc] initWithCapacity:capacity];
 }
@@ -186,7 +186,7 @@ inline CGPoint CCCardinalSplineAt( CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p
 
 @synthesize points=_points;
 
-+(instancetype) actionWithDuration:(CCTime)duration points:(CCPointArray *)points tension:(CGFloat)tension
++(id) actionWithDuration:(CCTime)duration points:(CCPointArray *)points tension:(CGFloat)tension
 {
 	return [[self alloc] initWithDuration:duration points:points tension:tension ];
 }
@@ -337,7 +337,7 @@ inline CGPoint CCCardinalSplineAt( CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p
 @end
 
 @implementation CCActionCatmullRomTo
-+(instancetype) actionWithDuration:(CCTime)dt points:(CCPointArray *)points
++(id) actionWithDuration:(CCTime)dt points:(CCPointArray *)points
 {
 	return [[self alloc] initWithDuration:dt points:points];
 }
@@ -353,7 +353,7 @@ inline CGPoint CCCardinalSplineAt( CGPoint p0, CGPoint p1, CGPoint p2, CGPoint p
 @end
 
 @implementation CCActionCatmullRomBy
-+(instancetype) actionWithDuration:(CCTime)dt points:(CCPointArray *)points
++(id) actionWithDuration:(CCTime)dt points:(CCPointArray *)points
 {
 	return [[self alloc] initWithDuration:dt points:points];
 }

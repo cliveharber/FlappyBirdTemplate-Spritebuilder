@@ -30,7 +30,7 @@
 *  @return The CCEffectBrightness object.
 *  @since v3.2 and later
 */
-+(instancetype)effectWithBrightness:(float)brightness;
++(id)effectWithBrightness:(float)brightness;
 
 /**
  *  Initializes a CCEffectBrightness object with a brightness adjustment of 0.

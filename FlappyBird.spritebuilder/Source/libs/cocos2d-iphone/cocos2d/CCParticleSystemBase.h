@@ -312,7 +312,7 @@ typedef void (*_CC_UPDATE_PARTICLE_IMP)(id, SEL, _CCParticle*, CGPoint);
  *
  *  @return The CCParticleSystem Object.
  */
-+(instancetype) particleWithFile:(NSString*)plistFile;
++(id) particleWithFile:(NSString*)plistFile;
 
 /**
  *  Creates and returns an empty particle system object with the specified maxmium number of particles.
@@ -321,7 +321,7 @@ typedef void (*_CC_UPDATE_PARTICLE_IMP)(id, SEL, _CCParticle*, CGPoint);
  *
  *  @return The CCParticleSystem Object.
  */
-+(instancetype) particleWithTotalParticles:(NSUInteger) numberOfParticles;
++(id) particleWithTotalParticles:(NSUInteger) numberOfParticles;
 
 /**
  *  Initializes and returns a particle system object from the specified plist source file.

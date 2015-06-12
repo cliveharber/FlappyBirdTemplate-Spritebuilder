@@ -59,7 +59,7 @@ __attribute__((deprecated))
  *  @return The CCSpriteBatchNode Object.
  *  @see CCTexture
  */
-+(instancetype)batchNodeWithTexture:(CCTexture *)tex;
++(id)batchNodeWithTexture:(CCTexture *)tex;
 
 /**
  *  Creates and returns a batch node with the specified image file value.
@@ -68,7 +68,7 @@ __attribute__((deprecated))
  *
  *  @return The CCSpriteBatchNode Object.
  */
-+(instancetype)batchNodeWithFile:(NSString*) fileImage;
++(id)batchNodeWithFile:(NSString*) fileImage;
 
 /**
  *  Creates and returns a batch node with the specified texture and capacity values.

@@ -29,7 +29,7 @@
 *  @return The CCEffectContrast object.
 *  @since v3.2 and later
 */
-+(instancetype)effectWithContrast:(float)contrast;
++(id)effectWithContrast:(float)contrast;
 
 /**
  *  Initializes a CCEffectContrast object with a contrast adjustment of 0.

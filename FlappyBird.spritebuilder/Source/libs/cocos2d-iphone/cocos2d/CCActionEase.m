@@ -46,7 +46,7 @@
 
 @synthesize inner=_inner;
 
-+(instancetype) actionWithAction: (CCActionInterval*) action
++(id) actionWithAction: (CCActionInterval*) action
 {
 	return [[self alloc] initWithAction: action];
 }
@@ -138,7 +138,7 @@
 
 @implementation CCActionEaseRate
 @synthesize rate=_rate;
-+(instancetype) actionWithAction: (CCActionInterval*) action rate:(float)rate
++(id) actionWithAction: (CCActionInterval*) action rate:(float)rate
 {
 	return [[self alloc] initWithAction: action rate:rate];
 }
@@ -209,12 +209,12 @@
 
 @synthesize period = _period;
 
-+(instancetype) actionWithAction: (CCActionInterval*) action
++(id) actionWithAction: (CCActionInterval*) action
 {
 	return [[self alloc] initWithAction:action period:0.3f];
 }
 
-+(instancetype) actionWithAction: (CCActionInterval*) action period:(float)period
++(id) actionWithAction: (CCActionInterval*) action period:(float)period
 {
 	return [[self alloc] initWithAction:action period:period];
 }

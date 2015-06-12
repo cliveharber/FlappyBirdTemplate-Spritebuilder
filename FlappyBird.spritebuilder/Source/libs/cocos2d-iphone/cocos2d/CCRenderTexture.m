@@ -80,18 +80,18 @@
 
 @implementation CCRenderTexture
 
-+(instancetype)renderTextureWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat) format depthStencilFormat:(GLuint)depthStencilFormat
++(id)renderTextureWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat) format depthStencilFormat:(GLuint)depthStencilFormat
 {
   return [[self alloc] initWithWidth:w height:h pixelFormat:format depthStencilFormat:depthStencilFormat];
 }
 
 // issue #994
-+(instancetype)renderTextureWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format
++(id)renderTextureWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format
 {
 	return [[self alloc] initWithWidth:w height:h pixelFormat:format];
 }
 
-+(instancetype)renderTextureWithWidth:(int)w height:(int)h
++(id)renderTextureWithWidth:(int)w height:(int)h
 {
 	return [[self alloc] initWithWidth:w height:h pixelFormat:CCTexturePixelFormat_RGBA8888 depthStencilFormat:0];
 }

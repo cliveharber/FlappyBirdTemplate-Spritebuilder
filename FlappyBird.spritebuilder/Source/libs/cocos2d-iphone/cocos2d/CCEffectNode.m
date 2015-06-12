@@ -66,17 +66,17 @@
 	return self;
 }
 
-+(instancetype)effectNodeWithWidth:(int)w height:(int)h
++(id)effectNodeWithWidth:(int)w height:(int)h
 {
     return [[CCEffectNode alloc] initWithWidth:w height:h];
 }
 
-+(instancetype)effectNodeWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format
++(id)effectNodeWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format
 {
     return [[CCEffectNode alloc] initWithWidth:w height:h pixelFormat:format];
 }
 
-+(instancetype)effectNodeWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format depthStencilFormat:(GLuint)depthStencilFormat
++(id)effectNodeWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format depthStencilFormat:(GLuint)depthStencilFormat
 {
     return [[CCEffectNode alloc] initWithWidth:w height:h pixelFormat:format depthStencilFormat:depthStencilFormat];
 }

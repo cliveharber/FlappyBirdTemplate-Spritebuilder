@@ -32,7 +32,7 @@
 *  @since v3.2 and later
 *  @see CCSprite
 */
-+(instancetype)effectWithShininess:(float)shininess environment:(CCSprite *)environment;
++(id)effectWithShininess:(float)shininess environment:(CCSprite *)environment;
 
 /**
  *  Creates a CCEffectReflection object with the specified environment and normal map and the following default parameters:
@@ -47,7 +47,7 @@
  *  @see CCSprite
  *  @see CCSpriteFrame
  */
-+(instancetype)effectWithShininess:(float)shininess environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap;
++(id)effectWithShininess:(float)shininess environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap;
 
 /**
  *  Creates a CCEffectReflection object with the specified parameters and nil normal map.
@@ -61,7 +61,7 @@
  *  @since v3.2 and later
  *  @see CCSprite
  */
-+(instancetype)effectWithShininess:(float)shininess fresnelBias:(float)bias fresnelPower:(float)power environment:(CCSprite *)environment;
++(id)effectWithShininess:(float)shininess fresnelBias:(float)bias fresnelPower:(float)power environment:(CCSprite *)environment;
 
 /**
  *  Creates a CCEffectReflection object with the specified parameters.
@@ -77,7 +77,7 @@
  *  @see CCSprite
  *  @see CCSpriteFrame
  */
-+(instancetype)effectWithShininess:(float)shininess fresnelBias:(float)bias fresnelPower:(float)power environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap;
++(id)effectWithShininess:(float)shininess fresnelBias:(float)bias fresnelPower:(float)power environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap;
 
 
 /**

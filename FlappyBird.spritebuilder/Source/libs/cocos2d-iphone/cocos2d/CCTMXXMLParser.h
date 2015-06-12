@@ -204,7 +204,7 @@ typedef NS_ENUM(uint32_t, ccTMXTileFlags) {
  *
  *  @return The CCTiledMapInfo Object.
  */
-+(instancetype) formatWithTMXFile:(NSString*)tmxFile;
++(id) formatWithTMXFile:(NSString*)tmxFile;
 
 /**
  *  Creates and returns a CCTiledMapInfo object using the TMX XML and resource file path.
@@ -214,7 +214,7 @@ typedef NS_ENUM(uint32_t, ccTMXTileFlags) {
  *
  *  @return The CCTiledMapInfo Object.
  */
-+(instancetype) formatWithXML:(NSString*)tmxString resourcePath:(NSString*)resourcePath;
++(id) formatWithXML:(NSString*)tmxString resourcePath:(NSString*)resourcePath;
 
 /**
  *  Initializes and returns a CCTiledMapInfo object using the TMX format file specified.

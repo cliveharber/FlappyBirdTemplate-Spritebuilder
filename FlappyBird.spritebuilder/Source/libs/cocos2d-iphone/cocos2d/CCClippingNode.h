@@ -60,7 +60,7 @@
  *  @return The new CCClippingNode instance.
  *  @see clippingNodeWithStencil:
  */
-+(instancetype) clippingNode;
++(id) clippingNode;
 
 /**
  *  Creates and returns a clipping node object with the specified stencil node.
@@ -70,7 +70,7 @@
  *  @return The new CCClippingNode instance.
  *  @see clippingNode
  */
-+(instancetype) clippingNodeWithStencil:(CCNode *)stencil;
++(id) clippingNodeWithStencil:(CCNode *)stencil;
 
 // purposefully undocumented: init is inherited from NSObject
 -(instancetype) init;

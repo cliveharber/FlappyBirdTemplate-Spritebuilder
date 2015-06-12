@@ -41,7 +41,7 @@
 
 @synthesize tag = _tag, target = _target, originalTarget = _originalTarget;
 
-+(instancetype) action
++(id) action
 {
 	return [[self alloc] init];
 }
@@ -121,7 +121,7 @@
 #pragma mark RepeatForever
 @implementation CCActionRepeatForever
 @synthesize innerAction=_innerAction;
-+(instancetype) actionWithAction: (CCActionInterval*) action
++(id) actionWithAction: (CCActionInterval*) action
 {
 	return [[self alloc] initWithAction: action];
 }
@@ -181,7 +181,7 @@
 @synthesize speed=_speed;
 @synthesize innerAction=_innerAction;
 
-+(instancetype) actionWithAction: (CCActionInterval*) action speed:(CGFloat)value
++(id) actionWithAction: (CCActionInterval*) action speed:(CGFloat)value
 {
 	return [[self alloc] initWithAction: action speed:value];
 }
@@ -239,12 +239,12 @@
 
 @synthesize boundarySet = _boundarySet;
 
-+(instancetype) actionWithTarget:(CCNode *) fNode
++(id) actionWithTarget:(CCNode *) fNode
 {
 	return [[self alloc] initWithTarget:fNode];
 }
 
-+(instancetype) actionWithTarget:(CCNode *) fNode worldBoundary:(CGRect)rect
++(id) actionWithTarget:(CCNode *) fNode worldBoundary:(CGRect)rect
 {
 	return [[self alloc] initWithTarget:fNode worldBoundary:rect];
 }

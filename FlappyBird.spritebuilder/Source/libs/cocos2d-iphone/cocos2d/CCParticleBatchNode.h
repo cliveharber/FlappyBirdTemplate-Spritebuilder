@@ -62,7 +62,7 @@ __attribute__((deprecated))
  *
  *  @return The CCParticleBatchNode Object.
  */
-+(instancetype)batchNodeWithTexture:(CCTexture *)tex;
++(id)batchNodeWithTexture:(CCTexture *)tex;
 
 /**
  *  Creates and returns a particle batch node object from the specified image file value.
@@ -71,7 +71,7 @@ __attribute__((deprecated))
  *
  *  @return The CCParticleBatchNode Object.
  */
-+(instancetype)batchNodeWithFile:(NSString*) imageFile;
++(id)batchNodeWithFile:(NSString*) imageFile;
 
 /**
  *  Creates and returns a particle batch node object from the specified texture and capacity values.
@@ -81,7 +81,7 @@ __attribute__((deprecated))
  *
  *  @return The CCParticleBatchNode Object.
  */
-+(instancetype)batchNodeWithTexture:(CCTexture *)tex capacity:(NSUInteger) capacity;
++(id)batchNodeWithTexture:(CCTexture *)tex capacity:(NSUInteger) capacity;
 
 /**
  *  Creates and returns a particle batch node object from the specified texture and capacity values.
@@ -92,7 +92,7 @@ __attribute__((deprecated))
  *  @return The CCParticleBatchNode Object.
  */
 
-+(instancetype)batchNodeWithFile:(NSString*)fileImage capacity:(NSUInteger)capacity;
++(id)batchNodeWithFile:(NSString*)fileImage capacity:(NSUInteger)capacity;
 
 
 /// -----------------------------------------------------------------------

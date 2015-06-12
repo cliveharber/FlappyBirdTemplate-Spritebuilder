@@ -35,22 +35,22 @@
 @implementation CCSpriteBatchNode {
 }
 
-+(instancetype)batchNodeWithTexture:(CCTexture *)tex
++(id)batchNodeWithTexture:(CCTexture *)tex
 {
 	return [[self alloc] initWithTexture:tex capacity:0];
 }
 
-+(instancetype)batchNodeWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
++(id)batchNodeWithTexture:(CCTexture *)tex capacity:(NSUInteger)capacity
 {
 	return [[self alloc] initWithTexture:tex capacity:capacity];
 }
 
-+(instancetype)batchNodeWithFile:(NSString*)fileImage capacity:(NSUInteger)capacity
++(id)batchNodeWithFile:(NSString*)fileImage capacity:(NSUInteger)capacity
 {
 	return [[self alloc] initWithFile:fileImage capacity:capacity];
 }
 
-+(instancetype)batchNodeWithFile:(NSString*) imageFile
++(id)batchNodeWithFile:(NSString*) imageFile
 {
 	return [[self alloc] initWithFile:imageFile capacity:0];
 }

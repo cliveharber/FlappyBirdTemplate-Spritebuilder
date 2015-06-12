@@ -67,7 +67,7 @@
 
 #pragma mark CCTMXLayer - init & alloc & dealloc
 
-+(instancetype) layerWithTilesetInfo:(CCTiledMapTilesetInfo*)tilesetInfo layerInfo:(CCTiledMapLayerInfo*)layerInfo mapInfo:(CCTiledMapInfo*)mapInfo
++(id) layerWithTilesetInfo:(CCTiledMapTilesetInfo*)tilesetInfo layerInfo:(CCTiledMapLayerInfo*)layerInfo mapInfo:(CCTiledMapInfo*)mapInfo
 {
 	return [[self alloc] initWithTilesetInfo:tilesetInfo layerInfo:layerInfo mapInfo:mapInfo];
 }
@@ -310,7 +310,7 @@ AutomaticVertexZ(int tileX, int tileY, int mapColumns, int mapRows, CCTiledMapOr
 {
 	switch(orientation) {
 		case CCTiledMapOrientationIso: {
-			int maxVal = mapColumns + mapRows;
+			NSUInteger maxVal = mapColumns + mapRows;
 			return -(maxVal - (tileX + tileY));
 		}
 		

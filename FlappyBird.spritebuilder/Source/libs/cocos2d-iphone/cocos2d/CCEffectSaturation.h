@@ -27,7 +27,7 @@
  *  @return The CCEffectSaturation object.
  *  @since v3.2 and later
  */
-+(instancetype)effectWithSaturation:(float)saturation;
++(id)effectWithSaturation:(float)saturation;
 
 /**
  *  Initializes a CCEffectSaturation object with a saturation adjustment of 0.
