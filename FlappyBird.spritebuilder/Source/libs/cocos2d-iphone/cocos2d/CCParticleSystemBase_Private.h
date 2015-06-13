@@ -30,6 +30,6 @@
 -(void) update: (CCTime) dt;
 
 // System full status.
-@property (NS_NONATOMIC_IOSONLY, getter=isFull, readonly) BOOL full;
+-(BOOL) isFull;
 
 @end

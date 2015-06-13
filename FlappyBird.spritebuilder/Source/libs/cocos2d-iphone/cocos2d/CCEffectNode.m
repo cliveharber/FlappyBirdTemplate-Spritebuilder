@@ -40,22 +40,22 @@
 @implementation CCEffectNode
 
 
--(instancetype)init
+-(id)init
 {
     return [self initWithWidth:1 height:1];
 }
 
--(instancetype)initWithWidth:(int)width height:(int)height
+-(id)initWithWidth:(int)width height:(int)height
 {
     return [self initWithWidth:width height:height pixelFormat:CCTexturePixelFormat_Default];
 }
 
--(instancetype)initWithWidth:(int)width height:(int)height pixelFormat:(CCTexturePixelFormat)format
+-(id)initWithWidth:(int)width height:(int)height pixelFormat:(CCTexturePixelFormat)format
 {
     return [self initWithWidth:width height:height pixelFormat:format depthStencilFormat:0];
 }
 
--(instancetype)initWithWidth:(int)width height:(int)height pixelFormat:(CCTexturePixelFormat) format depthStencilFormat:(GLuint)depthStencilFormat
+-(id)initWithWidth:(int)width height:(int)height pixelFormat:(CCTexturePixelFormat) format depthStencilFormat:(GLuint)depthStencilFormat
 {
     if((self = [super initWithWidth:width height:height pixelFormat:CCTexturePixelFormat_Default depthStencilFormat:depthStencilFormat]))
     {
@@ -66,17 +66,17 @@
 	return self;
 }
 
-+(id)effectNodeWithWidth:(int)w height:(int)h
++(instancetype)effectNodeWithWidth:(int)w height:(int)h
 {
     return [[CCEffectNode alloc] initWithWidth:w height:h];
 }
 
-+(id)effectNodeWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format
++(instancetype)effectNodeWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format
 {
     return [[CCEffectNode alloc] initWithWidth:w height:h pixelFormat:format];
 }
 
-+(id)effectNodeWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format depthStencilFormat:(GLuint)depthStencilFormat
++(instancetype)effectNodeWithWidth:(int)w height:(int)h pixelFormat:(CCTexturePixelFormat)format depthStencilFormat:(GLuint)depthStencilFormat
 {
     return [[CCEffectNode alloc] initWithWidth:w height:h pixelFormat:format depthStencilFormat:depthStencilFormat];
 }

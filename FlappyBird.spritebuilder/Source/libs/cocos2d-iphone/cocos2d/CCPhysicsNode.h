@@ -128,7 +128,7 @@ typedef struct CCContactSet {
  *  @return FALSE
  *  @see CCPhysicsCollisionDelegate
  */
-@property (NS_NONATOMIC_IOSONLY, readonly) BOOL ignore;
+-(BOOL)ignore;
 
 /** @name Determining initial contact */
 
@@ -140,7 +140,7 @@ typedef struct CCContactSet {
  *  @return FALSE
  *  @see CCPhysicsCollisionDelegate
  */
-@property (NS_NONATOMIC_IOSONLY, readonly) BOOL firstContact;
+-(BOOL)firstContact;
 
 @end
 
@@ -376,6 +376,6 @@ For simplicity, CCPhysicsNode does not use [SI units](http://en.wikipedia.org/wi
  @see CCPhysicsNode
  @see physicsBody
  */
-@property (NS_NONATOMIC_IOSONLY, readonly, strong) CCPhysicsNode *physicsNode;
+-(CCPhysicsNode *)physicsNode;
 
 @end

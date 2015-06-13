@@ -14,12 +14,13 @@
 @class CCSprite;
 @class CCTexture;
 
+// not documented, considered a private class
 @interface CCEffectRenderer : NSObject
 
 @property (nonatomic, assign) CGSize contentSize;
 @property (nonatomic, assign) float contentScale;
 
--(instancetype)init NS_DESIGNATED_INITIALIZER;
+-(id)init;
 -(void)drawSprite:(CCSprite *)sprite withEffect:(CCEffect *)effect uniforms:(NSMutableDictionary *)uniforms renderer:(CCRenderer *)renderer transform:(const GLKMatrix4 *)transform;
 
 @end

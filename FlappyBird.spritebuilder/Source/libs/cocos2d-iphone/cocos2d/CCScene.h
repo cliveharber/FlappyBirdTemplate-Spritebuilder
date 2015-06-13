@@ -43,7 +43,6 @@
 /** @name Accessing Lights */
 /** 
  A collection of lights in the scene.
- @note Only available if `CC_EFFECTS_EXPERIMENTAL` is set to 1.
  @see CCLightCollection
  @since v3.4 and later
  */
@@ -54,6 +53,6 @@
 /// -----------------------------------------------------------------------
 
 /* Initialize the node. */
-- (instancetype)init NS_DESIGNATED_INITIALIZER;
+- (id)init;
 
 @end

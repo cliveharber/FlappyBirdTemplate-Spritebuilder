@@ -312,7 +312,7 @@ typedef void (*_CC_UPDATE_PARTICLE_IMP)(id, SEL, _CCParticle*, CGPoint);
  *
  *  @return The CCParticleSystem Object.
  */
-+(id) particleWithFile:(NSString*)plistFile;
++(instancetype) particleWithFile:(NSString*)plistFile;
 
 /**
  *  Creates and returns an empty particle system object with the specified maxmium number of particles.
@@ -321,7 +321,7 @@ typedef void (*_CC_UPDATE_PARTICLE_IMP)(id, SEL, _CCParticle*, CGPoint);
  *
  *  @return The CCParticleSystem Object.
  */
-+(id) particleWithTotalParticles:(NSUInteger) numberOfParticles;
++(instancetype) particleWithTotalParticles:(NSUInteger) numberOfParticles;
 
 /**
  *  Initializes and returns a particle system object from the specified plist source file.
@@ -330,7 +330,7 @@ typedef void (*_CC_UPDATE_PARTICLE_IMP)(id, SEL, _CCParticle*, CGPoint);
  *
  *  @return An initialized CCParticleSystem Object.
  */
--(instancetype) initWithFile:(NSString*) plistFile;
+-(id) initWithFile:(NSString*) plistFile;
 
 /**
  *  Initializes and returns a particle system object from the specified dictionary.
@@ -339,7 +339,7 @@ typedef void (*_CC_UPDATE_PARTICLE_IMP)(id, SEL, _CCParticle*, CGPoint);
  *
  *  @return An initialized CCParticleSystem Object.
  */
--(instancetype) initWithDictionary:(NSDictionary*)dictionary;
+-(id) initWithDictionary:(NSDictionary*)dictionary;
 
 /**
  *  Initializes and returns a particle system object from the specified dictionary and texture directory path values.
@@ -349,7 +349,7 @@ typedef void (*_CC_UPDATE_PARTICLE_IMP)(id, SEL, _CCParticle*, CGPoint);
  *
  *  @return An initialized CCParticleSystem Object.
  */
--(instancetype) initWithDictionary:(NSDictionary *)dictionary path:(NSString*)dirname;
+-(id) initWithDictionary:(NSDictionary *)dictionary path:(NSString*)dirname;
 
 /**
  *  Initializes and returns an empty particle system object with the specified maxmium number of particles.
@@ -358,7 +358,7 @@ typedef void (*_CC_UPDATE_PARTICLE_IMP)(id, SEL, _CCParticle*, CGPoint);
  *
  *  @return An initialized CCParticleSystem Object.
  */
--(instancetype) initWithTotalParticles:(NSUInteger) numberOfParticles NS_DESIGNATED_INITIALIZER;
+-(id) initWithTotalParticles:(NSUInteger) numberOfParticles;
 
 
 /// -----------------------------------------------------------------------

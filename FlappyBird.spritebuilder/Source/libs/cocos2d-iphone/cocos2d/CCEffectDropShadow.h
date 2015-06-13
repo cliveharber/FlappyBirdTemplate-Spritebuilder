@@ -30,7 +30,7 @@
  *  @since v3.3 and later
  *  @see CCColor
  */
-+(id)effectWithShadowOffset:(GLKVector2)shadowOffset shadowColor:(CCColor*)shadowColor blurRadius:(NSUInteger)blurRadius;
++(instancetype)effectWithShadowOffset:(GLKVector2)shadowOffset shadowColor:(CCColor*)shadowColor blurRadius:(NSUInteger)blurRadius;
 
 /**
  *  Initializes a CCEffectDropShadow object with a (5, -5) black drop shadow offset .
@@ -38,7 +38,7 @@
  *  @return The CCEffectDropShadow object.
  *  @since v3.3 and later
  */
--(instancetype)init;
+-(id)init;
 
 /**
  *  Initializes a CCEffectDropShadow object with the supplied parameters.
@@ -51,7 +51,7 @@
  *  @since v3.3 and later
  *  @see CCColor
  */
--(instancetype)initWithShadowOffset:(GLKVector2)shadowOffset shadowColor:(CCColor*)shadowColor blurRadius:(NSUInteger)blurRadius NS_DESIGNATED_INITIALIZER;
+-(id)initWithShadowOffset:(GLKVector2)shadowOffset shadowColor:(CCColor*)shadowColor blurRadius:(NSUInteger)blurRadius;
 
 
 /// -----------------------------------------------------------------------

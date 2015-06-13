@@ -27,7 +27,7 @@
 *  @return The CCEffectHue object.
 *  @since v3.2 and later
 */
-+(id)effectWithHue:(float)hue;
++(instancetype)effectWithHue:(float)hue;
 
 /**
  *  Initializes a CCEffectHue object with a hue adjustment of 0.
@@ -35,7 +35,7 @@
  *  @return The CCEffectHue object.
  *  @since v3.2 and later
  */
--(instancetype)init;
+-(id)init;
 
 /**
  *  Initializes a CCEffectHue object with the supplied parameters.
@@ -45,7 +45,7 @@
  *  @return The CCEffectHue object.
  *  @since v3.2 and later
  */
--(instancetype)initWithHue:(float)hue NS_DESIGNATED_INITIALIZER;
+-(id)initWithHue:(float)hue;
 
 
 /// -----------------------------------------------------------------------

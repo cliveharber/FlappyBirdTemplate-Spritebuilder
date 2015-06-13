@@ -27,7 +27,7 @@
  *  @return The CCEffectSaturation object.
  *  @since v3.2 and later
  */
-+(id)effectWithSaturation:(float)saturation;
++(instancetype)effectWithSaturation:(float)saturation;
 
 /**
  *  Initializes a CCEffectSaturation object with a saturation adjustment of 0.
@@ -35,7 +35,7 @@
  *  @return The CCEffecSaturation object.
  *  @since v3.2 and later
  */
--(instancetype)init;
+-(id)init;
 
 /**
  *  Initializes a CCEffectSaturation object with the supplied parameters.
@@ -45,7 +45,7 @@
  *  @return The CCEffectSaturation object.
  *  @since v3.2 and later
  */
--(instancetype)initWithSaturation:(float)saturation NS_DESIGNATED_INITIALIZER;
+-(id)initWithSaturation:(float)saturation;
 
 
 /// -----------------------------------------------------------------------

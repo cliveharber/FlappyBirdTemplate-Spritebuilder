@@ -27,7 +27,7 @@
 
 @implementation CCBKeyframe
 
-- (instancetype)init
+- (id)init
 {
     self = [super init];
     if (!self) return NULL;
@@ -37,7 +37,6 @@
     _time               = 0.0f;
     _easingType         = 0;
     _easingOpt          = 0.0f;
-    _frameActions       = nil;
     
     return self;
 }

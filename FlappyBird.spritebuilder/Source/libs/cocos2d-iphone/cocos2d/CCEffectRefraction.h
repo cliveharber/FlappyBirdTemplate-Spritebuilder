@@ -29,7 +29,7 @@
 *  @since v3.2 and later
 *  @see CCSprite
 */
-+(id)effectWithRefraction:(float)refraction environment:(CCSprite *)environment;
++(instancetype)effectWithRefraction:(float)refraction environment:(CCSprite *)environment;
 
 /**
 *  Creates a CCEffectRefraction object with the supplied parameters.
@@ -43,7 +43,7 @@
  *  @see CCSprite
  *  @see CCSpriteFrame
  */
-+(id)effectWithRefraction:(float)refraction environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap;
++(instancetype)effectWithRefraction:(float)refraction environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap;
 
 /**
  *  Initializes a CCEffectRefraction object with the following default parameters:
@@ -52,7 +52,7 @@
  *  @return The CCEffectRefraction object.
  *  @since v3.2 and later
  */
--(instancetype)init;
+-(id)init;
 
 /**
  *  Initializes a CCEffectRefraction object with the supplied parameters and a nil normal map.
@@ -64,7 +64,7 @@
  *  @since v3.2 and later
  *  @see CCSprite
  */
--(instancetype)initWithRefraction:(float)refraction environment:(CCSprite *)environment;
+-(id)initWithRefraction:(float)refraction environment:(CCSprite *)environment;
 
 /**
  *  Initializes a CCEffectRefraction object with the supplied parameters.
@@ -78,7 +78,7 @@
  *  @see CCSprite
  *  @see CCSpriteFrame
  */
--(instancetype)initWithRefraction:(float)refraction environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap NS_DESIGNATED_INITIALIZER;
+-(id)initWithRefraction:(float)refraction environment:(CCSprite *)environment normalMap:(CCSpriteFrame *)normalMap;
 
 
 /// -----------------------------------------------------------------------

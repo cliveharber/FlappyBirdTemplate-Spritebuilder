@@ -68,7 +68,7 @@ typedef NS_ENUM(NSUInteger, CCProgressNodeType) {
  *  @return The CCProgressNode Object.
  *  @see CCSprite
  */
-+(id)progressWithSprite:(CCSprite*) sprite;
++(instancetype)progressWithSprite:(CCSprite*) sprite;
 
 /**
  *  Initializes and returns a progress node object using the specified sprite value.
@@ -78,7 +78,7 @@ typedef NS_ENUM(NSUInteger, CCProgressNodeType) {
  *  @return An initialized CCProgressNode Object.
  *  @see CCSprite
  */
--(instancetype)initWithSprite:(CCSprite*) sprite NS_DESIGNATED_INITIALIZER;
+-(id)initWithSprite:(CCSprite*) sprite;
 
 /// -----------------------------------------------------------------------
 /// @name Changing Progress Behavior

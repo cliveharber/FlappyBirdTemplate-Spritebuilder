@@ -32,7 +32,7 @@
 - (instancetype)initWithName:(NSString *)name
                   resolution:(NSString *)resolution
                           os:(NSString *)os
-                   remoteURL:(NSURL *)remoteURL NS_DESIGNATED_INITIALIZER;
+                   remoteURL:(NSURL *)remoteURL;
 
 /** @name Accessing Package Information */
 
@@ -135,7 +135,7 @@
  *  @since v3.3 and later
  *  @see status
  */
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *statusToString;
+- (NSString *)statusToString;
 
 /*
  *  Creates a new instance of a package populated with the contents of the dictionary.
@@ -159,7 +159,7 @@
  *  @see initWithDictionary:
  */
 // purposefully undocumented: The initializer initWithDictionary and related toDictionary are for internal use only to persist packages.
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSDictionary *toDictionary;
+- (NSDictionary *)toDictionary;
 
 @end
 

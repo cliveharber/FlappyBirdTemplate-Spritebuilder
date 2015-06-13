@@ -17,7 +17,7 @@
     BOOL _keyboardIsShown;
     float _keyboardHeight;
 }
-- (instancetype) init {
+- (id) init {
     if (self=[super init]) {
         // Create UITextField and set it up
         _textField = [[UITextField alloc] initWithFrame:CGRectZero];
@@ -111,22 +111,22 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-
     [self endFocusingOnTextField];
+    if ([[self delegate] respondsToSelector:@selector(platformTextFieldDidFinishEditing:)]) {
+        [[self delegate]platformTextFieldDidFinishEditing:self];
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    if ([[self delegate] respondsToSelector:@selector(platformTextFieldDidFinishEditing:)]) {
-        [[self delegate]platformTextFieldDidFinishEditing:self];
-    }
-
-    
     return YES;
 }
 
-
+- (id)nativeTextField
+{
+    return _textField;
+}
 
 
 #pragma mark Keyboard Notifications
@@ -154,7 +154,7 @@
     UIView* view = [[CCDirector sharedDirector] view];
     
     NSDictionary* info = [notification userInfo];
-    NSValue* value = info[UIKeyboardFrameEndUserInfoKey];
+    NSValue* value = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect frame = [value CGRectValue];
     frame = [view.window convertRect:frame toView:view];
     

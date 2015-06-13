@@ -26,7 +26,7 @@
  *  @return The CCEffectPixellate object.
  *  @since v3.2 and later
  */
-+(id)effectWithBlockSize:(float)blockSize;
++(instancetype)effectWithBlockSize:(float)blockSize;
 
 /**
  *  Initializes a CCEffectPixellate object with a block size of 1.
@@ -34,7 +34,7 @@
  *  @return The CCEffectPixellate object.
  *  @since v3.2 and later
  */
--(instancetype)init;
+-(id)init;
 
 /**
  *  Initializes a CCEffectPixellate object with the supplied parameters.
@@ -44,7 +44,7 @@
  *  @return The CCEffectPixellate object.
  *  @since v3.2 and later
  */
--(instancetype)initWithBlockSize:(float)blockSize NS_DESIGNATED_INITIALIZER;
+-(id)initWithBlockSize:(float)blockSize;
 
 
 /// -----------------------------------------------------------------------

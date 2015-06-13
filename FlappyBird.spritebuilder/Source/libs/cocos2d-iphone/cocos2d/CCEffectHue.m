@@ -26,7 +26,7 @@ static GLKMatrix4 matrixWithHue(float hue);
 
 @implementation CCEffectHueImpl
 
--(instancetype)initWithInterface:(CCEffectHue *)interface
+-(id)initWithInterface:(CCEffectHue *)interface
 {
     NSArray *uniforms = @[
                           [CCEffectUniform uniform:@"mat4" name:@"u_hueRotationMtx" value:[NSValue valueWithGLKMatrix4:GLKMatrix4Identity]]
@@ -61,15 +61,15 @@ static GLKMatrix4 matrixWithHue(float hue);
 
     CCEffectRenderPass *pass0 = [[CCEffectRenderPass alloc] init];
     pass0.debugLabel = @"CCEffectHue pass 0";
-    pass0.beginBlocks = @[[^(CCEffectRenderPass *pass, CCEffectRenderPassInputs *passInputs){
+    pass0.beginBlocks = @[[[CCEffectRenderPassBeginBlockContext alloc] initWithBlock:^(CCEffectRenderPass *pass, CCEffectRenderPassInputs *passInputs){
 
         passInputs.shaderUniforms[CCShaderUniformMainTexture] = passInputs.previousPassTexture;
         passInputs.shaderUniforms[CCShaderUniformPreviousPassTexture] = passInputs.previousPassTexture;
         passInputs.shaderUniforms[CCShaderUniformTexCoord1Center] = [NSValue valueWithGLKVector2:passInputs.texCoord1Center];
         passInputs.shaderUniforms[CCShaderUniformTexCoord1Extents] = [NSValue valueWithGLKVector2:passInputs.texCoord1Extents];
 
-        passInputs.shaderUniforms[pass.uniformTranslationTable[@"u_hueRotationMtx"]] = weakInterface.hueRotationMtx;
-    } copy]];
+        passInputs.shaderUniforms[passInputs.uniformTranslationTable[@"u_hueRotationMtx"]] = weakInterface.hueRotationMtx;
+    }]];
     
     return @[pass0];
 }
@@ -80,12 +80,12 @@ static GLKMatrix4 matrixWithHue(float hue);
 
 @implementation CCEffectHue
 
--(instancetype)init
+-(id)init
 {
     return [self initWithHue:0.0f];
 }
 
--(instancetype)initWithHue:(float)hue
+-(id)initWithHue:(float)hue
 {
     if((self = [super init]))
     {
@@ -97,7 +97,7 @@ static GLKMatrix4 matrixWithHue(float hue);
     return self;
 }
 
-+(id)effectWithHue:(float)hue
++(instancetype)effectWithHue:(float)hue
 {
     return [[self alloc] initWithHue:hue];
 }

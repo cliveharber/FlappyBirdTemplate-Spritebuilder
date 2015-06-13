@@ -29,7 +29,7 @@
 *  @return The CCEffectContrast object.
 *  @since v3.2 and later
 */
-+(id)effectWithContrast:(float)contrast;
++(instancetype)effectWithContrast:(float)contrast;
 
 /**
  *  Initializes a CCEffectContrast object with a contrast adjustment of 0.
@@ -37,7 +37,7 @@
  *  @return The CCEffectContrast object.
  *  @since v3.2 and later
  */
--(instancetype)init;
+-(id)init;
 
 /**
  *  Initializes a CCEffectContrast object with the supplied parameters.
@@ -47,7 +47,7 @@
  *  @return The CCEffectContrast object.
  *  @since v3.2 and later
  */
--(instancetype)initWithContrast:(float)contrast NS_DESIGNATED_INITIALIZER;
+-(id)initWithContrast:(float)contrast;
 
 
 /// -----------------------------------------------------------------------

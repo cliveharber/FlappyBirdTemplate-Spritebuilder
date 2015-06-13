@@ -41,12 +41,12 @@
 
 @synthesize tag = _tag, target = _target, originalTarget = _originalTarget;
 
-+(id) action
++(instancetype) action
 {
 	return [[self alloc] init];
 }
 
--(instancetype) init
+-(id) init
 {
 	if( (self=[super init]) ) {
 		_originalTarget = _target = nil;
@@ -121,12 +121,12 @@
 #pragma mark RepeatForever
 @implementation CCActionRepeatForever
 @synthesize innerAction=_innerAction;
-+(id) actionWithAction: (CCActionInterval*) action
++(instancetype) actionWithAction: (CCActionInterval*) action
 {
 	return [[self alloc] initWithAction: action];
 }
 
--(instancetype) initWithAction: (CCActionInterval*) action
+-(id) initWithAction: (CCActionInterval*) action
 {
 	if( (self=[super init]) )
 		self.innerAction = action;
@@ -181,12 +181,12 @@
 @synthesize speed=_speed;
 @synthesize innerAction=_innerAction;
 
-+(id) actionWithAction: (CCActionInterval*) action speed:(CGFloat)value
++(instancetype) actionWithAction: (CCActionInterval*) action speed:(CGFloat)value
 {
 	return [[self alloc] initWithAction: action speed:value];
 }
 
--(instancetype) initWithAction: (CCActionInterval*) action speed:(CGFloat)value
+-(id) initWithAction: (CCActionInterval*) action speed:(CGFloat)value
 {
 	if( (self=[super init]) ) {
 		self.innerAction = action;
@@ -239,17 +239,17 @@
 
 @synthesize boundarySet = _boundarySet;
 
-+(id) actionWithTarget:(CCNode *) fNode
++(instancetype) actionWithTarget:(CCNode *) fNode
 {
 	return [[self alloc] initWithTarget:fNode];
 }
 
-+(id) actionWithTarget:(CCNode *) fNode worldBoundary:(CGRect)rect
++(instancetype) actionWithTarget:(CCNode *) fNode worldBoundary:(CGRect)rect
 {
 	return [[self alloc] initWithTarget:fNode worldBoundary:rect];
 }
 
--(instancetype) initWithTarget:(CCNode *)fNode
+-(id) initWithTarget:(CCNode *)fNode
 {
 	if( (self=[super init]) ) {
 
@@ -265,7 +265,7 @@
 	return self;
 }
 
--(instancetype) initWithTarget:(CCNode *)fNode worldBoundary:(CGRect)rect
+-(id) initWithTarget:(CCNode *)fNode worldBoundary:(CGRect)rect
 {
 	if( (self=[super init]) ) {
 

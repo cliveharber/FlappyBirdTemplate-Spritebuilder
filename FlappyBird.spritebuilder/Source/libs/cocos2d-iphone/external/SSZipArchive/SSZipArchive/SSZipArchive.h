@@ -27,11 +27,11 @@
 + (BOOL)createZipFileAtPath:(NSString *)path withFilesAtPaths:(NSArray *)filenames;
 + (BOOL)createZipFileAtPath:(NSString *)path withContentsOfDirectory:(NSString *)directoryPath;
 
-- (instancetype)initWithPath:(NSString *)path;
-@property (NS_NONATOMIC_IOSONLY, readonly) BOOL open;
+- (id)initWithPath:(NSString *)path;
+- (BOOL)open;
 - (BOOL)writeFile:(NSString *)path;
 - (BOOL)writeData:(NSData *)data filename:(NSString *)filename;
-@property (NS_NONATOMIC_IOSONLY, readonly) BOOL close;
+- (BOOL)close;
 
 @end
 

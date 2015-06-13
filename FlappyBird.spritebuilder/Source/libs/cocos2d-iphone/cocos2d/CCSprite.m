@@ -59,37 +59,37 @@
 	BOOL _flipX, _flipY;
 }
 
-+(id)spriteWithImageNamed:(NSString*)imageName
++(instancetype)spriteWithImageNamed:(NSString*)imageName
 {
     return [[self alloc] initWithImageNamed:imageName];
 }
 
-+(id)spriteWithTexture:(CCTexture*)texture
++(instancetype)spriteWithTexture:(CCTexture*)texture
 {
 	return [[self alloc] initWithTexture:texture];
 }
 
-+(id)spriteWithTexture:(CCTexture*)texture rect:(CGRect)rect
++(instancetype)spriteWithTexture:(CCTexture*)texture rect:(CGRect)rect
 {
 	return [[self alloc] initWithTexture:texture rect:rect];
 }
 
-+(id)spriteWithFile:(NSString*)filename
++(instancetype)spriteWithFile:(NSString*)filename
 {
 	return [[self alloc] initWithFile:filename];
 }
 
-+(id)spriteWithFile:(NSString*)filename rect:(CGRect)rect
++(instancetype)spriteWithFile:(NSString*)filename rect:(CGRect)rect
 {
 	return [[self alloc] initWithFile:filename rect:rect];
 }
 
-+(id)spriteWithSpriteFrame:(CCSpriteFrame*)spriteFrame
++(instancetype)spriteWithSpriteFrame:(CCSpriteFrame*)spriteFrame
 {
 	return [[self alloc] initWithSpriteFrame:spriteFrame];
 }
 
-+(id)spriteWithSpriteFrameName:(NSString*)spriteFrameName
++(instancetype)spriteWithSpriteFrameName:(NSString*)spriteFrameName
 {
 	CCSpriteFrame *frame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:spriteFrameName];
 
@@ -97,23 +97,23 @@
 	return [self spriteWithSpriteFrame:frame];
 }
 
-+(id)spriteWithCGImage:(CGImageRef)image key:(NSString*)key
++(instancetype)spriteWithCGImage:(CGImageRef)image key:(NSString*)key
 {
 	return [[self alloc] initWithCGImage:image key:key];
 }
 
-+(id) emptySprite
++(instancetype) emptySprite
 {
     return [[self alloc] init];
 }
 
--(instancetype) init
+-(id) init
 {
 	return [self initWithTexture:nil rect:CGRectZero];
 }
 
 // designated initializer
--(instancetype) initWithTexture:(CCTexture*)texture rect:(CGRect)rect rotated:(BOOL)rotated
+-(id) initWithTexture:(CCTexture*)texture rect:(CGRect)rect rotated:(BOOL)rotated
 {
 	if((self = [super init])){
 		self.blendMode = [CCBlendMode premultipliedAlphaMode];
@@ -131,24 +131,22 @@
 		
 		[self setTexture:texture];
 		[self setTextureRect:rect rotated:rotated untrimmedSize:rect.size];
-        
-        _effectRenderer = [[CCEffectRenderer alloc] init];
 	}
 	
 	return self;
 }
 
-- (instancetype) initWithImageNamed:(NSString*)imageName
+- (id) initWithImageNamed:(NSString*)imageName
 {
     return [self initWithSpriteFrame:[CCSpriteFrame frameWithImageNamed:imageName]];
 }
 
--(instancetype) initWithTexture:(CCTexture*)texture rect:(CGRect)rect
+-(id) initWithTexture:(CCTexture*)texture rect:(CGRect)rect
 {
 	return [self initWithTexture:texture rect:rect rotated:NO];
 }
 
--(instancetype) initWithTexture:(CCTexture*)texture
+-(id) initWithTexture:(CCTexture*)texture
 {
 	NSAssert(texture!=nil, @"Invalid texture for sprite");
 
@@ -157,7 +155,7 @@
 	return [self initWithTexture:texture rect:rect];
 }
 
--(instancetype) initWithFile:(NSString*)filename
+-(id) initWithFile:(NSString*)filename
 {
 	NSAssert(filename != nil, @"Invalid filename for sprite");
 
@@ -171,7 +169,7 @@
 	return nil;
 }
 
--(instancetype) initWithFile:(NSString*)filename rect:(CGRect)rect
+-(id) initWithFile:(NSString*)filename rect:(CGRect)rect
 {
 	NSAssert(filename!=nil, @"Invalid filename for sprite");
 
@@ -182,7 +180,7 @@
 	return nil;
 }
 
-- (instancetype) initWithSpriteFrame:(CCSpriteFrame*)spriteFrame
+- (id) initWithSpriteFrame:(CCSpriteFrame*)spriteFrame
 {
 	NSAssert(spriteFrame!=nil, @"Invalid spriteFrame for sprite");
 
@@ -191,7 +189,7 @@
 	return ret;
 }
 
--(instancetype)initWithSpriteFrameName:(NSString*)spriteFrameName
+-(id)initWithSpriteFrameName:(NSString*)spriteFrameName
 {
 	NSAssert(spriteFrameName!=nil, @"Invalid spriteFrameName for sprite");
 
@@ -199,7 +197,7 @@
 	return [self initWithSpriteFrame:frame];
 }
 
-- (instancetype) initWithCGImage:(CGImageRef)image key:(NSString*)key
+- (id) initWithCGImage:(CGImageRef)image key:(NSString*)key
 {
 	NSAssert(image!=nil, @"Invalid CGImageRef for sprite");
 
@@ -436,14 +434,18 @@
 
 -(void)setEffect:(CCEffect *)effect
 {
-    _effect = effect;
-    if (effect)
-    {
-        [self updateShaderUniformsFromEffect];
-    }
-    else
-    {
-        _shaderUniforms = nil;
+    if(effect != _effect){
+        _effect = effect;
+        
+        if(effect){
+            if(_effectRenderer == nil){
+                _effectRenderer = [[CCEffectRenderer alloc] init];
+            }
+            
+            [self updateShaderUniformsFromEffect];
+        } else {
+            _shaderUniforms = nil;
+        }
     }
 }
 

@@ -24,9 +24,9 @@ static float conditionBrightness(float brightness);
 
 @implementation CCEffectBrightnessImpl
 
--(instancetype)initWithInterface:(CCEffectBrightness *)interface
+-(id)initWithInterface:(CCEffectBrightness *)interface
 {
-    CCEffectUniform* uniformBrightness = [CCEffectUniform uniform:@"float" name:@"u_brightness" value:@0.0f];
+    CCEffectUniform* uniformBrightness = [CCEffectUniform uniform:@"float" name:@"u_brightness" value:[NSNumber numberWithFloat:0.0f]];
     
     NSArray *fragFunctions = [CCEffectBrightnessImpl buildFragmentFunctions];
     NSArray *renderPasses = [CCEffectBrightnessImpl buildRenderPassesWithInterface:interface];
@@ -57,15 +57,15 @@ static float conditionBrightness(float brightness);
 
     CCEffectRenderPass *pass0 = [[CCEffectRenderPass alloc] init];
     pass0.debugLabel = @"CCEffectBrightness pass 0";
-    pass0.beginBlocks = @[[^(CCEffectRenderPass *pass, CCEffectRenderPassInputs *passInputs){
+    pass0.beginBlocks = @[[[CCEffectRenderPassBeginBlockContext alloc] initWithBlock:^(CCEffectRenderPass *pass, CCEffectRenderPassInputs *passInputs){
         
         passInputs.shaderUniforms[CCShaderUniformMainTexture] = passInputs.previousPassTexture;
         passInputs.shaderUniforms[CCShaderUniformPreviousPassTexture] = passInputs.previousPassTexture;
         passInputs.shaderUniforms[CCShaderUniformTexCoord1Center] = [NSValue valueWithGLKVector2:passInputs.texCoord1Center];
         passInputs.shaderUniforms[CCShaderUniformTexCoord1Extents] = [NSValue valueWithGLKVector2:passInputs.texCoord1Extents];
 
-        passInputs.shaderUniforms[pass.uniformTranslationTable[@"u_brightness"]] = weakInterface.conditionedBrightness;
-    } copy]];
+        passInputs.shaderUniforms[passInputs.uniformTranslationTable[@"u_brightness"]] = weakInterface.conditionedBrightness;
+    }]];
     
     return @[pass0];
 }
@@ -75,17 +75,17 @@ static float conditionBrightness(float brightness);
 
 @implementation CCEffectBrightness
 
--(instancetype)init
+-(id)init
 {
     return [self initWithBrightness:0.0f];
 }
 
--(instancetype)initWithBrightness:(float)brightness
+-(id)initWithBrightness:(float)brightness
 {
     if((self = [super init]))
     {
         _brightness = brightness;
-        _conditionedBrightness = @(conditionBrightness(brightness));
+        _conditionedBrightness = [NSNumber numberWithFloat:conditionBrightness(brightness)];
 
         self.effectImpl = [[CCEffectBrightnessImpl alloc] initWithInterface:self];
         self.debugName = @"CCEffectBrightness";
@@ -93,7 +93,7 @@ static float conditionBrightness(float brightness);
     return self;
 }
 
-+(id)effectWithBrightness:(float)brightness
++(instancetype)effectWithBrightness:(float)brightness
 {
     return [[self alloc] initWithBrightness:brightness];
 }
@@ -101,7 +101,7 @@ static float conditionBrightness(float brightness);
 -(void)setBrightness:(float)brightness
 {
     _brightness = brightness;
-    _conditionedBrightness = @(conditionBrightness(brightness));
+    _conditionedBrightness = [NSNumber numberWithFloat:conditionBrightness(brightness)];
 }
 
 @end

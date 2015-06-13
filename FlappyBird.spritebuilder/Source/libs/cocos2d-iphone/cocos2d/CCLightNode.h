@@ -20,8 +20,6 @@ typedef NS_ENUM(NSUInteger, CCLightType)
 
 /**
  CCLightNode allows the user to define lights used by CCEffectLighting.
- 
- @note This class is currently considered experimental. Set the `CC_EFFECTS_EXPERIMENTAL` macro to 1 in ccConfig.h if you want to use this class.
  */
 @interface CCLightNode : CCNode
 
@@ -42,7 +40,7 @@ typedef NS_ENUM(NSUInteger, CCLightType)
  *  @see CCLightType
  *  @see CCColor
  */
-+(id)lightWithType:(CCLightType)type groups:(NSArray*)groups color:(CCColor *)color intensity:(float)intensity;
++(instancetype)lightWithType:(CCLightType)type groups:(NSArray*)groups color:(CCColor *)color intensity:(float)intensity;
 
 /**
  *  Creates a CCLightNode object with the specified parameters.
@@ -61,7 +59,7 @@ typedef NS_ENUM(NSUInteger, CCLightType)
  *  @see CCLightType
  *  @see CCColor
  */
-+(id)lightWithType:(CCLightType)type
++(instancetype)lightWithType:(CCLightType)type
             groups:(NSArray*)groups
              color:(CCColor *)color
          intensity:(float)intensity
@@ -77,7 +75,7 @@ typedef NS_ENUM(NSUInteger, CCLightType)
  *  @return The CCLightNode object.
  *  @since v3.4 and later
  */
--(instancetype)init;
+-(id)init;
 
 /**
  *  Initializes a CCLightNode object with the specified parameters.
@@ -92,7 +90,7 @@ typedef NS_ENUM(NSUInteger, CCLightType)
  *  @see CCLightType
  *  @see CCColor
  */
--(instancetype)initWithType:(CCLightType)type groups:(NSArray*)groups color:(CCColor *)color intensity:(float)intensity;
+-(id)initWithType:(CCLightType)type groups:(NSArray*)groups color:(CCColor *)color intensity:(float)intensity;
 
 /**
  *  Initializes a CCLightNode object with the specified parameters.
@@ -109,14 +107,14 @@ typedef NS_ENUM(NSUInteger, CCLightType)
  *  @return The CCLighttNode object.
  *  @since v3.4 and later
  */
--(instancetype)initWithType:(CCLightType)type
+-(id)initWithType:(CCLightType)type
            groups:(NSArray*)groups
             color:(CCColor *)color
         intensity:(float)intensity
     specularColor:(CCColor *)specularColor
 specularIntensity:(float)specularIntensity
      ambientColor:(CCColor *)ambientColor
- ambientIntensity:(float)ambientIntensity NS_DESIGNATED_INITIALIZER;
+ ambientIntensity:(float)ambientIntensity;
 
 
 /// -----------------------------------------------------------------------

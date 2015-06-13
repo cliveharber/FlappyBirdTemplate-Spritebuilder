@@ -36,7 +36,7 @@
  *  @return The CCEffectBloom object.
  *  @since v3.2 and later
  */
-+(id)effectWithBlurRadius:(NSUInteger)blurRadius intensity:(float)intensity luminanceThreshold:(float)luminanceThreshold;
++(instancetype)effectWithBlurRadius:(NSUInteger)blurRadius intensity:(float)intensity luminanceThreshold:(float)luminanceThreshold;
 
 /**
  *  Initializes a CCEffectBloom object with the following default values:
@@ -45,7 +45,7 @@
  *  @return The CCEffectBloom object.
  *  @since v3.2 and later
  */
--(instancetype)init;
+-(id)init;
 
 /**
  *  Initializes a CCEffectBloom object with the following default parameters:
@@ -61,7 +61,7 @@
  *  @return The CCEffectBloom object.
  *  @since v3.2 and later
  */
--(instancetype)initWithPixelBlurRadius:(NSUInteger)blurRadius intensity:(float)intensity luminanceThreshold:(float)luminanceThreshold NS_DESIGNATED_INITIALIZER;
+-(id)initWithPixelBlurRadius:(NSUInteger)blurRadius intensity:(float)intensity luminanceThreshold:(float)luminanceThreshold;
 
 /// -----------------------------------------------------------------------
 /// @name Effect Properties

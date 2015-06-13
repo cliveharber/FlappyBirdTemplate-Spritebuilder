@@ -60,18 +60,18 @@
 @synthesize midpoint = _midpoint;
 @synthesize barChangeRate = _barChangeRate;
 
-+(id)progressWithSprite:(CCSprite*) sprite
++(instancetype)progressWithSprite:(CCSprite*) sprite
 {
 	return [[self alloc]initWithSprite:sprite];
 }
 
--(instancetype) init
+-(id) init
 {
 	return [self initWithSprite:nil];
 }
 
 // designated initializer
--(instancetype)initWithSprite:(CCSprite*) sprite
+-(id)initWithSprite:(CCSprite*) sprite
 {
 	if(( self = [super init] )){
 		_type = CCProgressNodeTypeRadial;

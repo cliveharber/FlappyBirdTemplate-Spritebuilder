@@ -28,12 +28,12 @@
 #import "CCActionProgressTimer.h"
 
 @implementation CCActionProgressTo
-+(id) actionWithDuration: (CCTime) t percent: (float) v
++(instancetype) actionWithDuration: (CCTime) t percent: (float) v
 {
 	return [[ self alloc] initWithDuration: t percent: v];
 }
 
--(instancetype) initWithDuration: (CCTime) t percent: (float) v
+-(id) initWithDuration: (CCTime) t percent: (float) v
 {
 	if( (self=[super initWithDuration: t] ) )
 		_to = v;
@@ -65,12 +65,12 @@
 @end
 
 @implementation CCActionProgressFromTo
-+(id) actionWithDuration: (CCTime) t from:(float)fromPercentage to:(float) toPercentage
++(instancetype) actionWithDuration: (CCTime) t from:(float)fromPercentage to:(float) toPercentage
 {
 	return [[self alloc] initWithDuration: t from: fromPercentage to: toPercentage];
 }
 
--(instancetype) initWithDuration: (CCTime) t from:(float)fromPercentage to:(float) toPercentage
+-(id) initWithDuration: (CCTime) t from:(float)fromPercentage to:(float) toPercentage
 {
 	if( (self=[super initWithDuration: t] ) ){
 		_to = toPercentage;
