@@ -144,9 +144,9 @@
 
 - (void)addObstacle {
     Obstacle *obstacle = (Obstacle *)[CCBReader load:@"Obstacle"];
-    CGPoint screenPosition = [self convertToWorldSpace:ccp(380, 0)];
-    CGPoint worldPosition = [physicsNode convertToNodeSpace:screenPosition];
-    obstacle.position = worldPosition;
+    CGPoint worldPosition = [self convertToWorldSpace:ccp(380, 0)];
+    CGPoint screenPosition = [physicsNode convertToNodeSpace:worldPosition];
+    obstacle.position = screenPosition;
     [obstacle setupRandomPosition];
     obstacle.zOrder = DrawingOrderPipes;
     [physicsNode addChild:obstacle];
