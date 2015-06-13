@@ -7,6 +7,7 @@
 //
 
 #import "CCNode.h"
+#import "Obstacle.h"
 
 @interface Obstacle : CCNode
 
